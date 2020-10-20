@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+
+   ghost:
+     image: ghost:latest
+     expose:
+       - 2368
+     restart: always
+     environment:
+       VIRTUAL_HOST: sobes.blog
+       url: http://sobes.blog
+       database__client: mysql
+       database__connection__host: db_node_domain
+       database__connection__user: bloghost
+       database__connection__password: password
+       database__connection__database: bloghost
+     container_name: bloghost
+volumes:
+    db_data:
+
+networks:
+  default:
+    external:
+      name: nginx-proxy
