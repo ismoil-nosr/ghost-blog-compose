@@ -15,7 +15,7 @@ docker run -d -p 80:80 --name nginx-proxy --net nginx-proxy -v /var/run/docker.s
 docker run -d --name bloghost --expose 2368 -e url=http://localhost.blog -e VIRTUAL_HOST=localhost.blog ghost:latest 
 ``` 
 
-or with docker-compose 
+or with `docker-compose`
 ``` 
 docker-compose up -d 
 ```
